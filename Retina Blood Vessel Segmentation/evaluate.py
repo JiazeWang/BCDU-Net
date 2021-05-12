@@ -3,6 +3,9 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import models as M
 import numpy as np
+
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
 #Keras
@@ -30,7 +33,6 @@ from extract_patches import get_data_testing
 from extract_patches import get_data_testing_overlap
 # pre_processing.py
 from pre_processing import my_PreProc
-
 
 
 
