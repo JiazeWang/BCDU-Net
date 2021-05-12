@@ -237,9 +237,9 @@ file_perf.write("Area under the ROC curve: "+str(AUC_ROC)
 file_perf.close()
 
 # Visualize
-fig,ax = plt.subplots(1,3,figsize=[256,256])
+fig,ax = plt.subplots(1,3,figsize=[15,15])
 
-for idx in range(10):
+for idx in range(20):
     ax[0].imshow(np.uint8(np.squeeze((orig_imgs[idx]))))
     ax[1].imshow(np.squeeze(gtruth_masks[idx]), cmap='gray')
     ax[2].imshow(np.squeeze(pred_imgs[idx]), cmap='gray')
