@@ -1,6 +1,6 @@
 from __future__ import division
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
 import models as M
 import numpy as np
 
@@ -237,11 +237,10 @@ file_perf.write("Area under the ROC curve: "+str(AUC_ROC)
 file_perf.close()
 
 # Visualize
-fig,ax = plt.subplots(10,3,figsize=[15,15])
+fig,ax = plt.subplots(10,3,figsize=[600,600])
 
 for idx in range(10):
     ax[idx, 0].imshow(np.uint8(np.squeeze((orig_imgs[idx]))))
     ax[idx, 1].imshow(np.squeeze(gtruth_masks[idx]), cmap='gray')
     ax[idx, 2].imshow(np.squeeze(pred_imgs[idx]), cmap='gray')
-
-plt.savefig(path_experiment+'sample_results.png')
+    plt.savefig(path_experiment+str(idx)+'.png')
